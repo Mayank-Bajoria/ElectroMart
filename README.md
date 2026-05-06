@@ -1,16 +1,25 @@
-# React + Vite
+# ElectroMart ⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ElectroMart is a premium electronics e-commerce store built with React and Tailwind CSS. It features a modern design with dark and light theme support, a functional shopping cart, and a responsive layout.
 
-Currently, two official plugins are available:
+## Team Members
+- **Shivansh Pandey** (Enrollment No: 2501010698)
+- **Mayank Bajoria** (Enrollment No: 2501010265)
+- **Aman Mishra** (Enrollment No: 2501010050)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **Modern UI**: Clean and minimalist design focused on premium gadgets.
+- **Themes**: Seamless switching between dark and light modes.
+- **Product Categories**: Browse products by smartphones, laptops, tablets, and accessories.
+- **Cart**: Real-time cart updates with quantity management.
+- **Responsive**: Fully optimized for mobile, tablet, and desktop.
 
-## React Compiler
+## Tech Stack
+- **React**: Frontend framework.
+- **Tailwind CSS**: Styling and layout.
+- **React Router**: Navigation and routing.
+- **React Icons**: Modern iconography.
+- **DummyJSON API**: Mock data for electronics.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deployed
+- (https://electromartreact.netlify.app/)
