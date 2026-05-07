@@ -5,7 +5,7 @@ ElectroMart is a premium electronics e-commerce store built with React and Tailw
 ## Team Members
 - **Shivansh Pandey** (Enrollment No: 2501010698)
 - **Mayank Bajoria** (Enrollment No: 2501010265)
-- **Aman Mishra** (Enrollment No: 2501010050)
+- **Aman Mishra** (Enrollment No: 2501010050) - Freerider
 
 ## Features
 - **Modern UI**: Clean and minimalist design focused on premium gadgets.
@@ -20,6 +20,3 @@ ElectroMart is a premium electronics e-commerce store built with React and Tailw
 - **React Router**: Navigation and routing.
 - **React Icons**: Modern iconography.
 - **DummyJSON API**: Mock data for electronics.
-
-## Deployed
-- (https://electromartreact.netlify.app/)
