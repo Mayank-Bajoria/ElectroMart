@@ -8,10 +8,7 @@ import ProductDetails from "./pages/ProductDetails"
 import Categories from "./pages/Categories"
 import CategoryPage from "./pages/CategoryPage"
 import Checkout from "./pages/Checkout"
-import OrderConfirmation from "./pages/OrderConfirmation"
 import Login from "./pages/Login"
-import Account from "./pages/Account"
-import NotFound from "./pages/NotFound"
 
 function App() {
   const [cart, setCart] = useState([])
@@ -120,7 +117,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
-        <Navbar cart={cart} user={user} theme={theme} toggleTheme={toggleTheme} />
+        <Navbar cart={cart} theme={theme} toggleTheme={toggleTheme} />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home addToCart={addToCart} />} />
@@ -128,11 +125,8 @@ function App() {
             <Route path="/category/:slug" element={<CategoryPage addToCart={addToCart} />} />
             <Route path="/cart" element={<Cart cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} decrementQuantity={decrementQuantity} />} />
             <Route path="/checkout" element={<Checkout cart={cart} clearCart={clearCart} />} />
-            <Route path="/order-confirmation" element={<OrderConfirmation />} />
             <Route path="/product/:id" element={<ProductDetails addToCart={addToCart} />} />
             <Route path="/login" element={<Login login={login} signup={signup} />} />
-            <Route path="/account" element={<Account user={user} logout={logout} />} />
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

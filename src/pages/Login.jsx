@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { FiMail, FiLock, FiUser, FiZap } from "react-icons/fi"
 
 function Login({ login, signup }) {
@@ -11,8 +11,7 @@ function Login({ login, signup }) {
   const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
-  const location = useLocation()
-  const from = location.state?.from?.pathname || "/"
+
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -25,7 +24,7 @@ function Login({ login, signup }) {
       } else {
         await signup(name, email, password)
       }
-      navigate(from, { replace: true })
+      navigate("/", { replace: true })
     } catch (err) {
       setError(err)
     } finally {

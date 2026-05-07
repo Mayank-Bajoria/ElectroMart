@@ -82,7 +82,7 @@ function Checkout({ cart, clearCart }) {
     }
 
     clearCart()
-    navigate("/order-confirmation")
+    navigate("/")
   }
 
   if (cart.length === 0) {

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { FiShoppingCart, FiZap, FiMenu, FiX, FiGrid, FiHome, FiUser, FiSun, FiMoon } from "react-icons/fi"
 
-function Navbar({ cart, user, theme, toggleTheme }) {
+function Navbar({ cart, theme, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const totalItems = cart.reduce((acc, item) => {
@@ -42,12 +42,8 @@ function Navbar({ cart, user, theme, toggleTheme }) {
           {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
         </button>
 
-        <Link to={user ? "/account" : "/login"} className="p-2.5 rounded-xl bg-surface border border-border text-text-secondary hover:text-text-primary hover:border-text-primary/20 transition-all group">
-          {user ? (
-            <img src={user.avatar} alt="User" className="w-5 h-5 rounded-md" />
-          ) : (
-            <FiUser size={18} className="group-hover:scale-110 transition-transform" />
-          )}
+        <Link to="/login" className="p-2.5 rounded-xl bg-surface border border-border text-text-secondary hover:text-text-primary hover:border-text-primary/20 transition-all group">
+          <FiUser size={18} className="group-hover:scale-110 transition-transform" />
         </Link>
 
         <Link to="/cart" className="flex items-center gap-2 px-4 py-2 bg-sky-500/10 border border-sky-500/20 text-sky-500 rounded-xl text-sm font-bold hover:bg-sky-500/20 hover:border-sky-500 transition-all">
@@ -69,8 +65,8 @@ function Navbar({ cart, user, theme, toggleTheme }) {
           <NavLink to="/categories" className="flex items-center gap-3 p-3 rounded-xl hover:bg-surface">
             <FiGrid size={18} /> Categories
           </NavLink>
-          <NavLink to={user ? "/account" : "/login"} className="flex items-center gap-3 p-3 rounded-xl hover:bg-surface">
-            <FiUser size={18} /> {user ? "Account" : "Login"}
+          <NavLink to="/login" className="flex items-center gap-3 p-3 rounded-xl hover:bg-surface">
+            <FiUser size={18} /> Login
           </NavLink>
         </div>
       )}
