@@ -10,6 +10,9 @@ export const categoryMeta = {
   "mobile-accessories": { label: "Accessories", icon: "🎧", api: "mobile-accessories" },
 }
 
+// Array of category slugs for the Categories page
+export const categories = Object.keys(categoryMeta)
+
 // Fetch all electronics products for the Home page
 export async function getElectronics() {
   try {
