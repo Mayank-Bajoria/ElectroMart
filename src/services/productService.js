@@ -16,9 +16,9 @@ export const categories = Object.keys(categoryMeta)
 // Fetch all electronics products for the Home page
 export async function getElectronics() {
   try {
-    const categories = ["smartphones", "laptops", "tablets", "mobile-accessories"]
+    const slugList = ["smartphones", "laptops", "tablets", "mobile-accessories"]
     const results = await Promise.all(
-      categories.map((cat) =>
+      slugList.map((cat) =>
         axios.get(`${BASE}/products/category/${cat}?limit=20`).then((r) => r.data.products)
       )
     )
