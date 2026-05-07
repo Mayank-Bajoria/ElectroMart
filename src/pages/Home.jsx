@@ -23,23 +23,31 @@ function Home({ addToCart }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    let cancelled = false
+    setLoading(true)
     getElectronics().then((data) => {
-      setProducts(data)
-      setLoading(false)
+      if (!cancelled) {
+        setProducts(data)
+        setLoading(false)
+      }
     })
+    return () => { cancelled = true }
   }, [])
 
-  const filtered = products.filter((p) => {
-    return p.title.toLowerCase().includes(search.toLowerCase())
-  })
+  const filtered = products.filter((p) =>
+    p.title.toLowerCase().includes(search.toLowerCase())
+  )
+
+  // Show skeleton while loading OR while products haven't arrived yet
+  const showSkeleton = loading || products.length === 0
 
   return (
     <div className="min-h-screen">
       <section className="relative pt-20 pb-16 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-glow blur-[120px] -z-10" />
-        
+
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-          Think Tech. <br/>
+          Think Tech. <br />
           <span className="bg-gradient-to-r from-sky-400 to-sky-600 bg-clip-text text-transparent">
             Think ElectroMart.
           </span>
@@ -55,16 +63,16 @@ function Home({ addToCart }) {
           <h2 className="text-xl font-bold">
             {search ? `Results for "${search}"` : "Featured Products"}
           </h2>
-          {!loading && (
+          {!showSkeleton && (
             <span className="text-sm text-text-muted">{filtered.length} items</span>
           )}
         </div>
 
-        {loading ? (
+        {showSkeleton ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => {
-              return <SkeletonCard key={n} />
-            })}
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+              <SkeletonCard key={n} />
+            ))}
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-20 bg-bg-card rounded-3xl border border-border">
@@ -73,9 +81,9 @@ function Home({ addToCart }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filtered.map((p) => {
-              return <ProductCard key={p.id} product={p} addToCart={addToCart} />
-            })}
+            {filtered.map((p) => (
+              <ProductCard key={p.id} product={p} addToCart={addToCart} />
+            ))}
           </div>
         )}
       </section>
