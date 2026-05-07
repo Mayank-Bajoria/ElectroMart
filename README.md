@@ -22,4 +22,8 @@ ElectroMart is a premium electronics e-commerce store built with React and Tailw
 - **DummyJSON API**: Mock data for electronics.
 
 ## Deployed
+<<<<<<< HEAD
 - (https://electromartreact.netlify.app/)
+=======
+- (https://electromartreact.netlify.app/)
+>>>>>>> main
