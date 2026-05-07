@@ -2,7 +2,7 @@ import axios from "axios"
 
 const BASE = "https://dummyjson.com"
 
-// Maps our URL slugs → DummyJSON category names
+
 export const categoryMeta = {
   smartphones: { label: "Smartphones", icon: "📱", api: "smartphones" },
   laptops: { label: "Laptops", icon: "💻", api: "laptops" },
@@ -10,10 +10,10 @@ export const categoryMeta = {
   "mobile-accessories": { label: "Accessories", icon: "🎧", api: "mobile-accessories" },
 }
 
-// Array of category slugs for the Categories page
+
 export const categories = Object.keys(categoryMeta)
 
-// Fetch all electronics products for the Home page
+
 export async function getElectronics() {
   try {
     const slugList = ["smartphones", "laptops", "tablets", "mobile-accessories"]
@@ -29,7 +29,7 @@ export async function getElectronics() {
   }
 }
 
-// Fetch products for a single category page
+
 export async function getCategory(slug) {
   const meta = categoryMeta[slug]
   if (!meta) return []
@@ -42,7 +42,7 @@ export async function getCategory(slug) {
   }
 }
 
-// Fetch a single product by ID
+
 export async function getSingleProduct(id) {
   try {
     const res = await axios.get(`${BASE}/products/${id}`)
